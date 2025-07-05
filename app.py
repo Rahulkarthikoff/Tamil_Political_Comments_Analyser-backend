@@ -12,6 +12,10 @@ model = model_bundle['model']
 vectorizer = model_bundle['vectorizer']
  # Make sure your model is in backend folder
 
+@app.route('/')
+def home():
+    return 'Tamil Sentiment Analysis API is running.'
+
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.get_json()
